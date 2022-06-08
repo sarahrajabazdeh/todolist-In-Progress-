@@ -5,9 +5,12 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"github.com/rs/cors"
 	"github.com/sarahrajabazdeh/todolist/config"
-
+	"github.com/sarahrajabazdeh/todolist/controller"
 	"github.com/sarahrajabazdeh/todolist/database"
+	"github.com/sarahrajabazdeh/todolist/dataservice"
+	"github.com/sarahrajabazdeh/todolist/router"
 )
 
 func main() {

@@ -8,6 +8,9 @@ import (
 	"github.com/sarahrajabazdeh/todolist/config"
 )
 
+type DatabaseInterface interface {
+}
+
 type Database struct {
 	DB *sql.DB
 }
