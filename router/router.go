@@ -7,7 +7,10 @@ import (
 	"github.com/sarahrajabazdeh/todolist/controller"
 )
 
-func SetupRoutes(router *mux.Router, ctrl controller.ControllerInterface) {
+var ctrl controller.ControllerInterface
+
+func SetupRoutes(router *mux.Router, c controller.ControllerInterface) {
+	ctrl = c
 
 	router.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Pong"))

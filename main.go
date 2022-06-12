@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	_ "github.com/lib/pq"
 	"github.com/rs/cors"
 	"github.com/sarahrajabazdeh/todolist/config"
 	"github.com/sarahrajabazdeh/todolist/controller"
@@ -31,8 +32,8 @@ func main() {
 	}
 
 	r := mux.NewRouter()
-	router.SetupRoutes(r, &ctrl)
 
+	router.SetupRoutes(r, &ctrl)
 	err := http.ListenAndServe(":"+config.Config.Server.Port, cors.AllowAll().Handler(r))
 	if err != nil {
 		log.Println(err)
