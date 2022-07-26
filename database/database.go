@@ -6,13 +6,17 @@ import (
 	"log"
 
 	"github.com/sarahrajabazdeh/todolist/config"
+	"github.com/sarahrajabazdeh/todolist/model"
+	"gorm.io/gorm"
 )
 
 type DatabaseInterface interface {
+	GetUsers() []model.User
 }
 
 type Database struct {
-	DB *sql.DB
+	DB   *sql.DB
+	Gorm *gorm.DB
 }
 
 func CreateDatabase() Database {

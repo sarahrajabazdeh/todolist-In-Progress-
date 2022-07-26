@@ -15,5 +15,7 @@ func SetupRoutes(router *mux.Router, c controller.ControllerInterface) {
 	router.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Pong"))
 	})
+	// GetUsers return all user in database path "localhost:9090/users" GET
+	router.HandleFunc("/users", ctrl.GetUsers).Methods("GET")
 
 }
